@@ -1,0 +1,28 @@
+.navbar-brand {
+    color: white;
+}
+
+.mylogo {
+    color: #DAA316;
+}
+
+.nav-link {
+    color: white;
+}
+
+.me-auto {
+    margin-right: 0;
+}
+
+.navbar-collapse {
+    flex-grow: 0.3;
+}
+
+.logotipo {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.link-activo {
+    color: #DAA316;
+}

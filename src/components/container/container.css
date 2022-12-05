@@ -1,0 +1,28 @@
+.igt-container {
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    height: 92.5vh;
+}
+
+.igt-nome-plataforma,
+.igt-situacaoMain {
+    color: #DAA316;
+}
+
+.igt-situacao {
+    margin-left: 20px;
+}
+
+.igt-conceito {
+    margin-left: 20px;
+}
+
+.igt-queixa-aqui {
+    margin-top: 20px;
+}
+
+.igt-opt-queixa {}
+
+.btn-queixa-trabalhador {}
