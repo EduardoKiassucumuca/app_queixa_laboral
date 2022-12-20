@@ -7,19 +7,16 @@ import { Link } from 'react-router-dom';
 
 function Menu() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
-        <Navbar.Brand className='logotipo' href="#home">IGT <span className='mylogo'>| Queixa Laboral</span></Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Link to="/"><Nav.Link className='link-activo'>Home</Nav.Link></Link>
-            <Nav.Link href="#pricing">Serviços</Nav.Link>
-            <Nav.Link href="#pricing">Entrar</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <header className="mb-auto">
+    <div>
+      <h3 className="float-md-start mb-0 logotipo-igt">IGT <span className='my-logo-igt'>| Queixa Laboral</span></h3>
+      <nav className="nav nav-masthead justify-content-center float-md-end">
+        <a className="nav-link active home-igt" aria-current="page" href="#">Home</a>
+        <a className="nav-link" href="#">Serviços</a>
+        <a className="nav-link" href="#">Entrar</a>
+      </nav>
+    </div>
+  </header>
   );
 }
 

@@ -2,7 +2,7 @@
     color: white;
 }
 
-.mylogo {
+.my-logo-igt {
     color: #DAA316;
 }
 
@@ -18,11 +18,6 @@
     flex-grow: 0.3;
 }
 
-.logotipo {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.link-activo {
+.nav-link .active .home-igt {
     color: #DAA316;
 }

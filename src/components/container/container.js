@@ -1,41 +1,30 @@
 
 import Container from 'react-bootstrap/Container';
-import './container.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import "./container.css";
 
 
 function CompnentMain() {
   return (
-        <Container className='container container-lg" p-3 my-0 bg-dark text-white igt-container' fluid>
-          <Row>
-        
-          <Col xs={6}>
+    <>
+      <main className="px-3">
+        <h1 className='titulo-principal-cover-igt'>Plataforma de <span className='cover-title-igt'>Queixas Laborais</span></h1>
+        <p className="lead">é um serviço feito pela IGT em todo continente nacional com o obejctivo de resolver os conflitos existentes entre empregador e trabalhador.</p>
+        <p className="lead-igt">A IGT Tem poder para te ajudar nas seguintes situações: <span class="texto-igt">Trabalhador sem salário ou remuneração, Dispedido injustamente e quando O trabalhador recusa prestar trabalho suplementar pedido pelo empregador.</span></p>
+        <p className="lead-btn">
+          <a href="#" className="btn btn-lg btn-secondary fw-bold bg-warning btn-queixar" id='btn-queixar-trabalhador'>Queixar Trabalhador</a>
+          <span className='opcao-queixa'> OU </span>
+          <a href="#" className="btn btn-lg btn-secondary fw-bold border-white bg-white">Queixar Empregador</a>
+        </p>
+      </main>
     
-            <h1>Plataforma de <span className='igt-nome-plataforma'>Queixas Laborais</span></h1>
-            <p className='igt-conceito'>é um serviço feito pela IGT em todo continente nacional com o obejctivo</p>
-            <p className='igt-conceito'>de resolver os conflitos existentes entre empregador e trabalhador.</p>
-            <p className='igt-situacaoMain'>A IGT Tem poder para te ajudar nas seguintes situações:</p>
-            <p className='igt-situacao'>Trabalhador sem salário ou remuneração</p>
-            <p className='igt-situacao'>Dispedido injustamente</p>
-            <p className='igt-situacao'>O trabalhador recusa prestar trabalho suplementar pedido pelo empregador</p>
-            </Col>
-            <Col xs={2} className='igt-queixa-aqui'>
-              <p>Faça a sua queixa aqui</p>
-              <p>--------------------------</p>
-            </Col>
-            <Col xs={4}>
-            <h3>Quem tu pretendes queixar</h3>
-            <Button variant="warning" className='btn-queixa-trabalhador'>Trabalhador</Button>
-            <p className='igt-opt-queixa'>OU</p>
-            <Link to="/queixoso"><Button variant="light">Empregador</Button></Link>
-            <p></p>
-            </Col>
-          </Row>
-        </Container>
-      
+      <footer className="mt-auto text-white-50">
+        <p>by <a href="#" class="text-white">@EduardoKiassucumuca</a>.</p>
+      </footer>
+</>
   );
 }
 
