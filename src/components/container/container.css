@@ -122,8 +122,22 @@ body {
 
 .lead-btn {
     margin-top: 100px;
+    display: inline-block;
 }
 
 .titulo-principal-cover-igt {
     margin-bottom: 50px;
+}
+
+.my-Buttons-queixa {
+    margin-top: 5em;
+    margin-left: 10px;
+}
+
+.col-opcao-queixa {
+    margin-top: 10px;
+}
+
+.px-3 {
+    margin-top: 120px;
 }

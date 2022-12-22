@@ -10,7 +10,7 @@ function Menu() {
     <header className="mb-auto">
     <div>
       <h3 className="float-md-start mb-0 logotipo-igt">IGT <span className='my-logo-igt'>| Queixa Laboral</span></h3>
-      <nav className="nav nav-masthead justify-content-center float-md-end">
+      <nav className="nav nav-masthead justify-content-center float-md-end"  expand="lg">
         <a className="nav-link active home-igt" aria-current="page" href="#">Home</a>
         <a className="nav-link" href="#">Serviços</a>
         <a className="nav-link" href="#">Entrar</a>
