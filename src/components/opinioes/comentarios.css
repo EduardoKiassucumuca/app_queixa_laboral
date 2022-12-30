@@ -1,0 +1,26 @@
+.txt-opinioes {
+    text-align: center;
+    color: hsl(43, 37%, 4%);
+    font-weight: bold;
+}
+
+.opinioes {
+    margin-top: 5rem;
+    background-color: #DAA316;
+    height: 300px;
+}
+
+.img-opinioes {
+    max-width: 80px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    border: 1px solid #ddd;
+}
+
+.fundo-img {
+    margin-bottom: 30px;
+    height: 160px;
+    background-image: url("../../img/fundo4.jfif");
+}

@@ -3,6 +3,7 @@ import Menu from "../Navbar/navbar";
 import CompnentMain from "../container/container";
 import Artigos from "../artigos/artigos";
 import Opinioes from "../opinioes/comentarios";
+import Footer from "../Footer/footer";
 
 function Home() {
   return (
@@ -13,8 +14,10 @@ function Home() {
      </div>
      <Artigos/>
      <Opinioes/>
+     <Footer/>
   </>
   );
 }
+
 
 export default Home;

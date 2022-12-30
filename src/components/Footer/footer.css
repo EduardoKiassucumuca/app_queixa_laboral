@@ -1,0 +1,4 @@
+.igt-footer {
+    margin-top: 15%;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
+}

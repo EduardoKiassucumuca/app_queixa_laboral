@@ -3,17 +3,26 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "./comentarios.css";
-import img_artigo from "../../img/lei_trabalho.jfif";
+import img_person from "../../img/Eduardo.jpg";
 import { Image } from 'react-bootstrap';
 
 function Opinioes() {
     return (
         <>
-        <h1 className='txt-opinioes'>Como a plataforma ajudou você</h1>
+   
         <Row className='opinioes'>
-            {Array.from({length:3}).map((_, artigos)=>(
+        <h1 className='txt-opinioes'>Como a plataforma ajudou você</h1>
+            {Array.from({length:3}).map((_, opiniao)=>(
                 <Col md={4}>
-                   
+                 
+                        <Card.Img className='img-opinioes rounded-circle' height="80" variant="top" src={img_person} />
+                        <Card.Body>
+                        <Card.Title className='titulo-artigo'>Eduardo Kiassucumuca</Card.Title>
+                        <Card.Text className='detalhes-artigo'>
+                        Esta plataforma ajudou-me imenso a resolver o problema que eu tinha com a minha empresa!
+                        </Card.Text>
+                        </Card.Body>
+                 
                 </Col>
             ))}
         </Row>
