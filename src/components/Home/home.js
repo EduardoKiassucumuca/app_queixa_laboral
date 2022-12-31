@@ -4,6 +4,8 @@ import CompnentMain from "../container/container";
 import Artigos from "../artigos/artigos";
 import Opinioes from "../opinioes/comentarios";
 import Footer from "../Footer/footer";
+import SubComentario from "../SubmeterComentario/submeter_comentario";
+import Noticias from "../Noticias/noticias";
 
 function Home() {
   return (
@@ -12,8 +14,10 @@ function Home() {
       <Menu/>
       <CompnentMain/>
      </div>
+     <Noticias/>
      <Artigos/>
      <Opinioes/>
+     <SubComentario/>
      <Footer/>
   </>
   );

@@ -1,11 +1,9 @@
 .artigos {
-    margin-top: 5rem;
-    margin-left: 10%;
+    justify-content: center;
+    padding: 70px;
 }
 
 .txt-artigos {
-    margin-top: 5em;
-    text-align: center;
     color: #DAA316;
 }
 

@@ -1,4 +1,33 @@
 .igt-footer {
-    margin-top: 15%;
     background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
+}
+
+.btn-comentar {
+    margin-top: 10px;
+    float: right
+}
+
+.text-comment {
+    color: #DAA316;
+}
+
+.link-sobre,
+.link-contactos {
+    color: #DAA316 !important;
+    font-family: Lato, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-align: left;
+}
+
+.mb-6-footer {
+    text-align: left;
+    margin-left: 4%;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.row-footer {
+    justify-content: center;
 }

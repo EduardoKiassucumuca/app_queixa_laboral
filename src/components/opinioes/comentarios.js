@@ -1,15 +1,13 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "./comentarios.css";
 import img_person from "../../img/Eduardo.jpg";
-import { Image } from 'react-bootstrap';
+
 
 function Opinioes() {
     return (
         <>
-   
         <Row className='opinioes'>
         <h1 className='txt-opinioes'>Como a plataforma ajudou você</h1>
             {Array.from({length:3}).map((_, opiniao)=>(

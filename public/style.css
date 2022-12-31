@@ -1,5 +1,11 @@
 body {
     overflow-y: auto!important;
+    background-color: white !important;
+}
+
+h1 {
+    font-family: Lato, sans-serif;
+    font-weight: bold;
 }
 
 .h-100 {

@@ -8,10 +8,10 @@ import img_artigo from "../../img/lei_trabalho.jfif";
 function Artigos() {
     return (
         <>
-        <h1 className='txt-artigos'>Artigos</h1>
         <Row className='artigos'>
+        <h1 className='txt-artigos'>Artigos</h1>
             {Array.from({length:3}).map((_, artigos)=>(
-                <Col md={4}>
+                <Col md={3}>
                     <Card style={{ width: '18rem' }}>
                         <button type='button' className='btn fw-bold bg-warning ribbon-artigo'>Artigo 1º</button>
                         <Card.Img variant="top" src={img_artigo} />
