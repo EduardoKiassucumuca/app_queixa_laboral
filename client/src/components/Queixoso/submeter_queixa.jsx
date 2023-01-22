@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import Axios from "axios";
 
 import UseForm from './dados_pessoais';
 import ReviewForm from './dados_da_empresa';
@@ -18,6 +19,7 @@ import { useState } from 'react';
 import Menu from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 import CompnentMain from '../container/container';
+import { handleClickButton } from './dados_pessoais';
 
 
 const formTemplate = {
@@ -27,7 +29,7 @@ const formTemplate = {
   comment: "",
 }
 
-function Submeter_queixa() {
+function Submeter_queixa(){
   const[data, setData] = useState(formTemplate)
   const updateFielHndler = (key, value) => {
     setData((prev)=>{
@@ -44,7 +46,6 @@ function Submeter_queixa() {
         <Col md={8} className="form-queixa">
         <div className="form-container">
           <Steps currentStep={currentStep}/>
-          <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
             <div className="inputs-container">{currentComponent}</div>
             <div className="actions">
               {!isFirstStep &&  (
@@ -54,7 +55,7 @@ function Submeter_queixa() {
                 </button>
               )}
                 {!isLastStep ? (
-                  <button type='submit' className='btn fw-bold bg-dark btn-avancar'>
+                  <button type='button' className='btn fw-bold bg-dark btn-avancar' onClick={handleClickButton}>
                   <span>Avançar</span>
                 
                   </button>
@@ -64,9 +65,9 @@ function Submeter_queixa() {
                     <FiSend/>
                   </button>
                 )}
-              
+            
             </div>
-          </form>
+     
         </div>
         </Col>
         </Col>
@@ -75,5 +76,5 @@ function Submeter_queixa() {
   
   );
 }
-
 export default Submeter_queixa;
+

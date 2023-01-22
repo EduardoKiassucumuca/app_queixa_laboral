@@ -25,6 +25,7 @@ const Thanks = ({ data, updateFielHndler }) => {
           <Form.Control
             as="textarea"
             placeholder="Queixa"
+            name="descricao"
             value={data.descricao || ""}
             onChange={(e) => updateFielHndler("descricao", e.target.value)}
             style={{ height: "100px" }}
