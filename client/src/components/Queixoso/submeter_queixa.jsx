@@ -1,5 +1,5 @@
-import {GrFormNext, GrFormPrevious} from 'react-icons/gr';
-import {FiSend} from 'react-icons/fi';
+import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
+import { FiSend } from 'react-icons/fi';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -19,7 +19,7 @@ import { useState } from 'react';
 import Menu from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 import CompnentMain from '../container/container';
-import { handleClickButton } from './dados_pessoais';
+import { queixar } from './details_queixa';
 
 
 const formTemplate = {
@@ -29,51 +29,54 @@ const formTemplate = {
   comment: "",
 }
 
-function Submeter_queixa(){
-  const[data, setData] = useState(formTemplate)
+
+function Submeter_queixa() {
+
+  const [data, setData] = useState(formTemplate)
   const updateFielHndler = (key, value) => {
-    setData((prev)=>{
-      return{...prev, [key]: value};
+    setData((prev) => {
+      return { ...prev, [key]: value };
     });
   };
-  const formComponents = [<UseForm data={data} updateFielHndler={updateFielHndler}/>, <ReviewForm data={data} updateFielHndler={updateFielHndler}/>, <Thanks data={data} updateFielHndler={updateFielHndler}/>]
+  const formComponents = [<UseForm data={data} updateFielHndler={updateFielHndler} />, <ReviewForm data={data} updateFielHndler={updateFielHndler} />, <Thanks data={data} updateFielHndler={updateFielHndler} />]
 
-  const {currentStep, currentComponent, changeStep, isLastStep, isFirstStep} = useForm(formComponents)
+  const { currentStep, currentComponent, changeStep, isLastStep, isFirstStep } = useForm(formComponents)
 
   return (
-      <Row className=''>
-        <Col md={12} className="form-queixa">
+    <Row className=''>
+      <Col md={12} className="form-queixa">
         <Col md={8} className="form-queixa">
-        <div className="form-container">
-          <Steps currentStep={currentStep}/>
-            <div className="inputs-container">{currentComponent}</div>
-            <div className="actions">
-              {!isFirstStep &&  (
-                <button type='button' className='btn fw-bold bg-default btn-voltar' onClick={() => changeStep(currentStep - 1)}>
-               
-                  <span>Voltar</span>
-                </button>
-              )}
-                {!isLastStep ? (
-                  <button type='button' className='btn fw-bold bg-dark btn-avancar' onClick={handleClickButton}>
-                  <span>Avançar</span>
-                
-                  </button>
-                ): (
-                  <button type='button'className='btn fw-bold bg-dark btn-enviar'>
-                    <span>Enviar</span>
-                    <FiSend/>
+          <div className="form-container">
+            <Steps currentStep={currentStep} />
+            <Form onSubmit={(e) => changeStep(currentStep + 1, e)}>
+              <div className="inputs-container">{currentComponent}</div>
+              <div className="actions">
+                {!isFirstStep && (
+                  <button type='button' className='btn fw-bold bg-default btn-voltar' onClick={() => changeStep(currentStep - 1)}>
+
+                    <span>Voltar</span>
                   </button>
                 )}
-            
-            </div>
-     
-        </div>
+                {!isLastStep ? (
+                  <button type='submit' className='btn fw-bold bg-dark btn-avancar'>
+                    <span>Avançar</span>
+
+                  </button>
+                ) : (
+                  <button type='submit' className='btn fw-bold bg-dark btn-enviar' onClick={queixar}>
+                    <span>Enviar</span>
+                    <FiSend />
+                  </button>
+                )}
+
+              </div>
+            </Form>
+          </div>
         </Col>
-        </Col>
-      </Row>
-     
-  
+      </Col >
+    </Row >
+
+
   );
 }
 export default Submeter_queixa;

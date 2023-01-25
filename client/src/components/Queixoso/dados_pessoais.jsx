@@ -2,149 +2,134 @@ import React from "react";
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import Axios from 'axios';
+import { useState } from 'react';
+
+/*export const nome_queixoso = document.getElementById("nome").value;
+export const sobrenome_queixoso = document.getElementById("sobrenome").value;
+export const bairro_queixoso = document.getElementById("bairro").value;
+export const rua_queixoso = document.getElementById("rua").value;
+export const bi_queixoso = document.getElementById("BI").value;
+export const estado_civil_queixoso = document.getElementById("ecivil").value;
+export const data_nascimento_queixoso = document.getElementById("data_nascimento").value;*/
 
 
+const UseForm = ({ data, updateFielHndler }) => {
 
-export function handleClickButton(){
-    var nome_queixoso = document.getElementById("nome").value;
-    var sobrenome_queixoso = document.getElementById("sobrenome").value;
-    var bairro_queixoso = document.getElementById("bairro").value;
-    var rua_queixoso = document.getElementById("rua").value;
-    var bi_queixoso = document.getElementById("BI").value;
-    var estado_civil_queixoso = document.getElementById("ecivil").value;
-    var data_nascimento_queixoso = document.getElementById("data_nascimento").value;
-
-    Axios.post("http://localhost:3001/register",{
-        nome: nome_queixoso,
-        sobrenome: sobrenome_queixoso,
-        bairro: bairro_queixoso,
-        rua: rua_queixoso,
-        BI: bi_queixoso,
-        estado_civil: estado_civil_queixoso,
-        data_nascimento: data_nascimento_queixoso,
-       }).then((response) =>{
-        console.log(response);
-       });
-      
-}
-
-const UseForm = ({data, updateFielHndler}) => {
     return (
         <div>
-                <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridNome">
+            <Row className="mb-3">
+                <Form.Group as={Col} controlId="formGridNome">
                     <Form.Label>Nome</Form.Label>
-                    <Form.Control 
-                    type="name" 
-                    placeholder="Digite o seu Nome"
-                    id="nome"
-                    name="nome"
-                    value={data.nome || ""}
-                    onChange={(e) => updateFielHndler("nome", e.target.value)}
+                    <Form.Control
+                        type="name"
+                        placeholder="Digite o seu Nome"
+                        id="nome"
+                        name="nome"
+                        value={data.nome || ""}
+                        onChange={(e) => updateFielHndler("nome", e.target.value)}
                     />
-                    </Form.Group>
+                </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridSobrenome">
+                <Form.Group as={Col} controlId="formGridSobrenome">
                     <Form.Label>Sobrenome</Form.Label>
-                    <Form.Control 
-                    type="text" 
-                    placeholder="Digite o seu sobrenome"
-                    id="sobrenome"
-                    name="sobrenome"
-                    value={data.sobrenome || ""}
-                    onChange={(e) => updateFielHndler("sobrenome", e.target.value)}
+                    <Form.Control
+                        type="text"
+                        placeholder="Digite o seu sobrenome"
+                        id="sobrenome"
+                        name="sobrenome"
+                        value={data.sobrenome || ""}
+                        onChange={(e) => updateFielHndler("sobrenome", e.target.value)}
                     />
-                    </Form.Group>
-                </Row>
-                <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridBairro">
+                </Form.Group>
+            </Row>
+            <Row className="mb-3">
+                <Form.Group as={Col} controlId="formGridBairro">
                     <Form.Label>Bairro</Form.Label>
-                    <Form.Control 
-                    type="text" 
-                    placeholder="Digite o seu Bairro"
-                    id="bairro"
-                    name="bairro"
-                    value={data.bairro || ""}
-                    onChange={(e) => updateFielHndler("bairro", e.target.value)}
+                    <Form.Control
+                        type="text"
+                        placeholder="Digite o seu Bairro"
+                        id="bairro"
+                        name="bairro"
+                        value={data.bairro || ""}
+                        onChange={(e) => updateFielHndler("bairro", e.target.value)}
                     />
-                    </Form.Group>
+                </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridRua">
+                <Form.Group as={Col} controlId="formGridRua">
                     <Form.Label>Rua</Form.Label>
-                    <Form.Control 
-                    type="text"
-                     placeholder="Digite a sua Rua"
-                     id="rua"
-                     name="rua"
-                     value={data.rua || ""}
-                    onChange={(e) => updateFielHndler("rua", e.target.value)}
-                     />
-                    </Form.Group>
-                </Row>
-                <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEstadoCivil">
-                        <Form.Label>Estado Civil</Form.Label>
-                        <Form.Select defaultValue="Choose..."
+                    <Form.Control
+                        type="text"
+                        placeholder="Digite a sua Rua"
+                        id="rua"
+                        name="rua"
+                        value={data.rua || ""}
+                        onChange={(e) => updateFielHndler("rua", e.target.value)}
+                    />
+                </Form.Group>
+            </Row>
+            <Row className="mb-3">
+                <Form.Group as={Col} controlId="formGridEstadoCivil">
+                    <Form.Label>Estado Civil</Form.Label>
+                    <Form.Select defaultValue="Choose..."
                         id="ecivil"
                         name="ecivil"
-                         value={data.ecivil || ""}
-                            onChange={(e) => updateFielHndler("ecivil", e.target.value)}>
-                            <option>Choose...</option>
-                            <option>Casado</option>
-                            <option>Solteiro</option>
-                            <option>Viuvo</option>
-                        </Form.Select>
-                    </Form.Group>
+                        value={data.ecivil || ""}
+                        onChange={(e) => updateFielHndler("ecivil", e.target.value)}>
+                        <option>Choose...</option>
+                        <option>Casado</option>
+                        <option>Solteiro</option>
+                        <option>Viuvo</option>
+                    </Form.Select>
+                </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridBI">
+                <Form.Group as={Col} controlId="formGridBI">
                     <Form.Label>BI</Form.Label>
-                    <Form.Control 
-                    type="text" 
-                    placeholder="1234567812LA890"
-                    id="BI"
-                    name="BI"
-                    value={data.BI || ""}
-                    onChange={(e) => updateFielHndler("BI", e.target.value)}
+                    <Form.Control
+                        type="text"
+                        placeholder="1234567812LA890"
+                        id="BI"
+                        name="BI"
+                        value={data.BI || ""}
+                        onChange={(e) => updateFielHndler("BI", e.target.value)}
                     />
-                    </Form.Group>
+                </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridDaataNascimento">
+                <Form.Group as={Col} controlId="formGridDaataNascimento">
                     <Form.Label>Data de Nascimento</Form.Label>
-                    <Form.Control 
-                    type="date"
-                    id="data_nascimento"
-                    name="dtNascimento"
-                    value={data.dtNascimento || ""}
-                    onChange={(e) => updateFielHndler("dtNascimento", e.target.value)}
+                    <Form.Control
+                        type="date"
+                        id="data_nascimento"
+                        name="dtNascimento"
+                        value={data.dtNascimento || ""}
+                        onChange={(e) => updateFielHndler("dtNascimento", e.target.value)}
                     />
-                    </Form.Group>
-                </Row>
-                <Row className="mb-3">
-                    <Col md={2}>
-                        <Form.Group as={Col} controlId="formGridRadios">
-                            <Form.Check 
+                </Form.Group>
+            </Row>
+            <Row className="mb-3">
+                <Col md={2}>
+                    <Form.Group as={Col} controlId="formGridRadios">
+                        <Form.Check
                             type="radio"
-                             label="Masculino"
-                              name="masculino"
-                               id="formHorizontalRadiosMasc"
-                               checked={data.masculino || ""}
-                                onChange={(e) => updateFielHndler("masculino", e.target.value)}
-                               />  
-                        </Form.Group>
-                    </Col>
-                    <Col md={3}>
-                        <Form.Group as={Col} controlId="formGridRadios">
-                            <Form.Check
-                             type="radio"
-                              label="Feminino"
-                               name="feminino" 
-                               id="formHorizontalRadiosFem"
-                               checked={data.feminino || ""}
-                            onChange={(e) => updateFielHndler("feminino", e.target.value)}/>
-                        </Form.Group>
-                    </Col>
-                </Row>
+                            label="Masculino"
+                            name="masculino"
+                            id="formHorizontalRadiosMasc"
+                            checked={data.masculino || ""}
+                            onChange={(e) => updateFielHndler("masculino", e.target.value)}
+                        />
+                    </Form.Group>
+                </Col>
+                <Col md={3}>
+                    <Form.Group as={Col} controlId="formGridRadios">
+                        <Form.Check
+                            type="radio"
+                            label="Feminino"
+                            name="feminino"
+                            id="formHorizontalRadiosFem"
+                            checked={data.feminino || ""}
+                            onChange={(e) => updateFielHndler("feminino", e.target.value)} />
+                    </Form.Group>
+                </Col>
+            </Row>
         </div>
     )
 }
