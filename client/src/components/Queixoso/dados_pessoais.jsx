@@ -4,13 +4,6 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import { useState } from 'react';
 
-/*export const nome_queixoso = document.getElementById("nome").value;
-export const sobrenome_queixoso = document.getElementById("sobrenome").value;
-export const bairro_queixoso = document.getElementById("bairro").value;
-export const rua_queixoso = document.getElementById("rua").value;
-export const bi_queixoso = document.getElementById("BI").value;
-export const estado_civil_queixoso = document.getElementById("ecivil").value;
-export const data_nascimento_queixoso = document.getElementById("data_nascimento").value;*/
 
 
 const UseForm = ({ data, updateFielHndler }) => {

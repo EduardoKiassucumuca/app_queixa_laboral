@@ -10,7 +10,6 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import "./dados_da_empresa.css";
 
-// dados pessoais da empresa onde o trabalhador trabalha
 
 
 const ReviewForm = ({ data, updateFielHndler }) => {
