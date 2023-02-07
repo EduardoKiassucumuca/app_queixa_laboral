@@ -4,6 +4,18 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import { useState } from 'react';
 
+import "./dados_pessoais.css";
+
+function addContacto(){
+    const newInputContacto = document.createElement("input");
+    const newDivCol = document.createElement("div");
+    const last_div_col = document.getElementById("col-input-contacto");
+    const row_dadosPessoais = document.getElementById("ultima-row");
+    row_dadosPessoais.appendChild(last_div_col, newDivCol);
+    /*const container_dados = document.getElementById("container-dados-pessoais");
+    const last_input =  document.getElementById("contacto_trab");
+    container_dados.appendChild(last_input, last_input);*/
+}
 
 
 const UseForm = ({ data, updateFielHndler }) => {
@@ -98,9 +110,8 @@ const UseForm = ({ data, updateFielHndler }) => {
                     />
                 </Form.Group>
             </Row>
-            <Row className="mb-3">
-                <Col md={2}>
-                    <Form.Group as={Col} controlId="formGridRadios">
+            <Row className="mb-3"  id="ultima-row">
+                <Col md={2}>   
                         <Form.Check
                             type="radio"
                             label="Masculino"
@@ -109,10 +120,8 @@ const UseForm = ({ data, updateFielHndler }) => {
                             checked={data.masculino || ""}
                             onChange={(e) => updateFielHndler("masculino", e.target.value)}
                         />
-                    </Form.Group>
                 </Col>
                 <Col md={3}>
-                    <Form.Group as={Col} controlId="formGridRadios">
                         <Form.Check
                             type="radio"
                             label="Feminino"
@@ -120,7 +129,19 @@ const UseForm = ({ data, updateFielHndler }) => {
                             id="formHorizontalRadiosFem"
                             checked={data.feminino || ""}
                             onChange={(e) => updateFielHndler("feminino", e.target.value)} />
+                </Col>
+                <Col md={3} id="col-input-contacto">
+                    <Form.Group>
+                        <Form.Control
+                            type="number"
+                            label="Contacto"
+                            name="contacto_trab"
+                            placeholder="930340539"
+                            id="contacto_trab"
+                            value={data.contacto_trab || ""}
+                            onChange={(e) => updateFielHndler("contacto_trab", e.target.value)} />
                     </Form.Group>
+                    <button type='button' className='btn fw-bold bg-primary btn-add' onClick={addContacto}>Add +</button>
                 </Col>
             </Row>
         </div>

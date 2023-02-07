@@ -1,0 +1,18 @@
+body {
+    background-color: white;
+}
+
+.row-form {
+    margin: 0;
+    margin-top: 5%;
+    background-color: white;
+}
+
+.titulo-form {
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
+.titulo-form-span {
+    color: #DAA316;
+}

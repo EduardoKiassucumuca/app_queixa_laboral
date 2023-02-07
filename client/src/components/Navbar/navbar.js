@@ -15,7 +15,7 @@ function Menu() {
           <a className="nav-link" href="#">Sobre</a>
           <a className="nav-link" href="#">Noticias</a>
           <a className="nav-link" href="#">Eventos</a>
-          <a className="nav-link" href="#">Entrar</a>
+          <Link to="/Entrar"><li><a className="nav-link" href="#">Entrar</a></li></Link>
         </nav>
       </header>
     </div>
