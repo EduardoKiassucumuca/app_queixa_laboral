@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const mysql = require("mysql");
 const cors = require("cors");
+
+
+
 const { generateKey } = require("crypto");
 
 
@@ -15,6 +18,27 @@ const db = mysql.createPool({
 
 app.use(cors());
 app.use(express.json());
+
+app.post('/login', (req, res) => {
+    const { username } = req.body;
+    const { senha } = req.body;
+
+    console.log(username)
+    sql_login = "SELECT * From utilizador where username=? AND senha=?";
+    db.query(sql_login, [username, senha], function(err, result) {
+        if (err) {
+            res.status(500).send(err)
+        } else {
+            if (result.length > 0) {
+                res.status(200).send(result[0])
+            } else {
+                res.status(400).send("Usuário não existe");
+            }
+        }
+    })
+})
+
+
 
 app.post("/queixar", (req, res) => {
 
