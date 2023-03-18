@@ -29,7 +29,7 @@ function Login() {
     Axios.post('http://localhost:3001/login', body)
     .then(({data})=>{
        console.log("Teste:",data);
-       localStorage.setItem("user", JSON.stringify(data));
+       sessionStorage.setItem("user", JSON.stringify(data));
        navigate("/dashboard");
     })
     .catch(({response}) =>{
@@ -38,11 +38,10 @@ function Login() {
   }
 
   return (
-    <>
-   
-      <Row className='justify-content-md-center row-form'>
-        <Col xs={6}>
-        <h3 className='titulo-form'>Login |<span className='titulo-form-span'>Entre com os seus dados</span></h3>
+    <div className='mydiv'>
+    <Row className='justify-content-md-center row-form'>
+    <Col xs={6} className=''>
+    <h3 className='titulo-form'>Login |<span className='titulo-form-span'>Entre com os seus dados</span></h3>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="text" placeholder="Username" name="username" onChange={inputChange} />
@@ -62,7 +61,7 @@ function Login() {
     </Col>
     </Row>
  
-    </>
+    </div>
   );
 }
 
