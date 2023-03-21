@@ -17,7 +17,7 @@ const Steps = ({currentStep}) => {
             <p>Dados da Empresa</p>
             <span class="step2">2</span>
         </div> 
-        <div className={`step ${currentStep >=2 ? "active":""}`}>
+        <div className={`step ${currentStep >=2 ? "active":""}`} id="step-queixa">
         <BsCircle/> 
             <p>Queixa</p>
             <span class="step3">3</span>

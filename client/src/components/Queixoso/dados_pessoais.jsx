@@ -130,19 +130,7 @@ const UseForm = ({ data, updateFielHndler }) => {
                             checked={data.feminino || ""}
                             onChange={(e) => updateFielHndler("feminino", e.target.value)} />
                 </Col>
-                <Col md={3} id="col-input-contacto">
-                    <Form.Group>
-                        <Form.Control
-                            type="number"
-                            label="Contacto"
-                            name="contacto_trab"
-                            placeholder="930340539"
-                            id="contacto_trab"
-                            value={data.contacto_trab || ""}
-                            onChange={(e) => updateFielHndler("contacto_trab", e.target.value)} />
-                    </Form.Group>
-                    <button type='button' className='btn fw-bold bg-primary btn-add' onClick={addContacto}>Add +</button>
-                </Col>
+               
             </Row>
         </div>
     )

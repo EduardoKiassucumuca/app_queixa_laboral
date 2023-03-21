@@ -1,23 +1,17 @@
-.navbar-brand {
-    color: white;
-}
 
-.my-logo-igt {
+.marca{
     color: #DAA316;
+}
+.marca-igt, .sub-menu
+{
+    margin-right:auto;
+    margin-left:auto;
+}
+.navbar-nav .nav-link.active, .navbar-nav .show > .nav-link{
+     color: #DAA316;
 }
 
 .nav-link {
     color: white;
 }
 
-.me-auto {
-    margin-right: 0;
-}
-
-.navbar-collapse {
-    flex-grow: 0.3;
-}
-
-.nav-link .active .home-igt {
-    color: #DAA316;
-}

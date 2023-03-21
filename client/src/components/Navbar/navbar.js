@@ -7,19 +7,21 @@ import { Link } from 'react-router-dom';
 
 function Menu() {
   return (
-    <div className="menu">
-      <header className="mb-auto">
-        <h3 className="float-md-start mb-0 logotipo-igt">IGT <span className='my-logo-igt'>| Queixa Laboral</span></h3>
-        <nav className="nav nav-masthead justify-content-center float-md-end"  expand="lg">
-          <a className="nav-link active home-igt" aria-current="page" href="#">Home</a>
-          <a className="nav-link" href="#">Sobre</a>
-          <a className="nav-link" href="#">Noticias</a>
-          <a className="nav-link" href="#">Eventos</a>
-          <Link to="/Entrar"><li><a className="nav-link" href="#">Entrar</a></li></Link>
-        </nav>
-      </header>
-    </div>
+    <>
+      <Navbar bg="dark" variant="dark" className="menu-igt">
+        <Container className="container-igt">
+          <Navbar.Brand href="#home" className="marca-igt">
+            IGT <span className="marca">| Queixa Laboral</span>
+          </Navbar.Brand>
+        
+          <Nav className="me-auto sub-menu">
+            <Nav.Link href="#home" className="myHome">Home</Nav.Link>
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    </>
   );
 }
-
 export default Menu;

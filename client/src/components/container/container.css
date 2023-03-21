@@ -69,10 +69,6 @@ body {
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
 
-#root {
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .cover-container {
     max-width: 42em;
@@ -140,4 +136,12 @@ body {
 
 .px-3 {
     margin-top: 126px;
+}
+.h-100
+{
+    height:800px !important;
+}
+.meu-cover{
+    margin-left:auto;
+    margin-right:auto;
 }
