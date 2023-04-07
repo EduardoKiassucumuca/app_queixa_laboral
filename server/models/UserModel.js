@@ -1,30 +1,22 @@
-import { Sequelize } from "sequelize";
-import db from "../config/database";
+const Sequelize = require("sequelize");
 
-const { DataTypes } = Sequelize;
+const dbconfig = require("../config/database.js");
 
-const Users = db.define('utilizador', {
-    username: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notEmpty: true,
-            len: [3, 100]
-        }
-    },
-    senha: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notEmpty: true,
-        }
-    },
-}, {
-    freezeTableName: true
-});
+const conexao = new Sequelize(dbconfig);
 
-(async() => {
-    await db.sync();
-})();
 
-export default utilizador;
+const Pessoa = require('../models/pessoa');
+
+//Pessoa.init(conexao);
+
+try {
+    conexao.authenticate();
+    console.log("Conexão estabelecida com sucesso.");
+
+
+} catch (error) {
+    console.error("Impossivel conectar a base de dados", error);
+
+}
+
+module.exports = conexao;

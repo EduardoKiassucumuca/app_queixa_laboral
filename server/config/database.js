@@ -1,8 +1,11 @@
-import { Sequelize } from "sequelize";
-
-const db = new Sequelize('bd_queixa_laboral', 'root', 'edkiassu', {
+module.exports = {
     host: "localhost",
-    dialect: "mysql"
-});
-
-export default db;
+    dialect: 'mysql',
+    username: 'root',
+    password: 'edkiassu',
+    database: 'bd_queixa_laboral2',
+    define: {
+        timestamps: false,
+        underscored: false,
+    },
+};
