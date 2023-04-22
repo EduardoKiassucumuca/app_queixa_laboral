@@ -1,1 +1,0 @@
-https://mfikri.com/en/blog/react-express-mysql-authentication
